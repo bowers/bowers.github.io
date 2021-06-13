@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Shell into an Ubuntu instance on EC2 from a browser using AWS System Manager
+title: Shell into an Ubuntu instance on EC2 from a browser using AWS Systems Manager
 ---
-This post describes how to create a shell session into an Ubuntu instance on EC2 using AWS System Manager. No SSH client needed.
+This post describes how to create a shell session into an Ubuntu instance on EC2 using AWS Systems Manager. No SSH client needed.
 
-You can use [AWS System Manager](https://aws.amazon.com/systems-manager/) to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you can configure and use these sessions using only a browser. You also don't need to open port 22 on the instance!
+You can use [AWS Systems Manager](https://aws.amazon.com/systems-manager/) to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you can configure and use these sessions using only a browser. You also don't need to open port 22 on the instance!
 
 The session interacts with the instance using the Systems Manager Agent (SSM Agent) installed on the instance. Since that agent is pre-installed on Ubuntu AMIs on EC2, all you need to do is apply one IAM Policy (AmazonSSMManagedInstanceCore) to the instance to let you create sessions from the browser.
 
@@ -51,7 +51,7 @@ The list of policies will automatically filter, leaving just the **AmazonSSMMana
 ![Go to Systems Manager dashboard]({{ site.baseurl }}/images/SelectSystemsManager.png "Go to Systems Manager dashboard")
 * Choose Fleet Manager from the left navigation bar.
 ![Go to Fleet Manager tool]({{ site.baseurl }}/images/FleetManager.png "Go to Fleet Manager tool")
-* You should see a list of instances that are manageable by System Manager. Click on the radio button next to your instance.  Then, from the Instance Actions drop-down menu, choose "Start session".
+* You should see a list of instances that are manageable by Systems Manager. Click on the radio button next to your instance.  Then, from the Instance Actions drop-down menu, choose "Start session".
 ![Go to Fleet Manager and launch session]({{ site.baseurl }}/images/FleetManager-StartSession.png "Go to Systems Manager dashboard")
 * A new browser tab (or window) should open, with shell access to your instance.  
 ![Shell session opens in new browser window]({{ site.baseurl }}/images/ShellAccess.png "Shell session opens in new window")
@@ -59,6 +59,6 @@ The list of policies will automatically filter, leaving just the **AmazonSSMMana
 ## Done!
 You are connected to the instance as user **ssm-user**, and you can use sudo. On my window, the little $ of the command prompt can be hard to see, but it's there.
 
-You can also launch a session directly from the EC2 console without visiting the System Manager console, by choosing "Connect to your Instance" and picking the Session Manager option. 
+You can also launch a session directly from the EC2 console without visiting the Systems Manager console, by choosing "Connect to your Instance" and picking the Session Manager option. 
 
 When you're done playing around, click "Terminate" on the shell window to close the shell session.
