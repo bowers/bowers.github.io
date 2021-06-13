@@ -58,4 +58,6 @@ The list of policies will automatically filter, leaving just the **AmazonSSMMana
 ## Done!
 You are connected to the instance as user **ssm-user**, and you can use sudo. On my window, the little $ of the command prompt can be hard to see, but it's there.
 
+You can also launch a session directly from the EC2 console without visiting the System Manager console, by choosing "Connect to your Instance" and picking the Session Manager option. 
+
 When you're done playing around, click "Terminate" on the shell window to close the shell session.
