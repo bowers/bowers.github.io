@@ -57,7 +57,7 @@ The session interacts with the instance using the [Systems Manager Agent (SSM Ag
 ![Shell session opens in new browser window]({{ site.baseurl }}/images/ShellAccess.png "Shell session opens in new window")
 
 ## Done!
-You are logged in as the user **ssm-user**. You can use sudo with this account. In my browser window shown above, the first command prompt $ was hard to see, so it wasn't obvious the shell was working until I started to type.
+You are logged in as the Systems Manager-created user **ssm-user** with root priviliges. (You can configure Systems Manager to log in as a specific user using the ["Run As" feature in Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-preferences-run-as.html).)
 
 You can also create and apply the necessary Role after an instance has launched, so this technique works with alraedy existing instances too.
 
