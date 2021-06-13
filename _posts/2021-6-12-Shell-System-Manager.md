@@ -8,7 +8,7 @@ You can use AWS System Manager to create an ssh-like shell session to an instanc
 
 The session is created through the Systems Manager Agent (SSM Agent) installed on the instance, plus applying one Policy (AmazonSSMManagedInstanceCore) either at launch time or later to the instance.  Ubuntu AMIs EC2 already include the SSM Agent, so it's extremely easy.
 
-## Create an IAM Role with SSM permissions##
+## Create an IAM Role with SSM permissions
 * Login to the AWS Management Console. 
 * Go to IAM.  [You're using IAM, right?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 ![Open the IAM dashboard]({{ site.baseurl }}/images/SelectIAM.png "AWS IAM service")
@@ -23,7 +23,7 @@ The window will automatically filter all available policies, leaving the one you
 * On the "Add tags (optional)" screen, just click "Next: Review".
 * On the Review screen, for Role Name enter "System-manager-Role".  Then click "Create role". You should then see the message "The role System-manager-Role has been created."
 
-## Create the EC2 instance.##
+## Create the EC2 instance.
 * From the left navigation bar, select Services, EC2.
 * Click on the Launch instance button, and select Launch instance.
 * Select an Ubuntu Server instance, such as "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type". 
@@ -35,12 +35,13 @@ The window will automatically filter all available policies, leaving the one you
 * Verify that you've picked an Ubuntu AMI, and that the Security Group lists no rules.  Then click on "Launch".
 * On the key pair selection pop-up window, choose "Proceed without a key pair", and click the acknowledge checkbox.  Then, click "Launch Instances".
 
-## Shell into instance with browser using Systems Manager##
+## Shell into instance with browser using Systems Manager
 * Now wait for the instance to launch. Click on "View Instances", and wait a minute or two, clicking the refresh button occasionally, until the Status Check column changes from "Initializing" to "2/2".
 * Now time to shell into the new instance.  From the Services menu, select "Systems Manager", which is a service listed under the "Management and Governance" list.
 * You should see a list of instances that are manageable by System Manager. Click on the radio button next to your instance.  Then, from the Instance Actions drop-down menu, choose "Start session".
 * A new browser tab (or window) should open, with shell access to your instance.  
 
+## Done!
 On my window, the little $ of the command prompt can be hard to see, but it's there)
 Note that you are connected to the instance as user "ssm-user", and you have sudo privileges.
 
