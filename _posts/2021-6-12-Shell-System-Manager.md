@@ -59,6 +59,6 @@ The session interacts with the instance using the [Systems Manager Agent (SSM Ag
 ## Done!
 You are logged in as the Systems Manager-created user **ssm-user** with root priviliges. (You can configure Systems Manager to log in as a specific user using the ["Run As" feature in Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-preferences-run-as.html).)
 
-You can also create and apply the necessary Role after an instance has launched, so this technique works with alraedy existing instances too.
+You can also create and apply the necessary Role after an instance has launched, so this technique also works with existing instances.
 
 When you're done playing around, click "Terminate" on the session window. This Terminate button only closes the shell session, it does not terminate the instance.
