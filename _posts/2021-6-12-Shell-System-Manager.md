@@ -9,7 +9,7 @@ You can use [AWS Systems Manager](https://aws.amazon.com/systems-manager/) to cr
 The session interacts with the instance using the [Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html). That agent is pre-installed on Ubuntu AMIs on EC2, so all you need to do is apply one IAM Policy (AmazonSSMManagedInstanceCore) to the instance.
 
 ## 1. Create an IAM Role with Systems Manager permissions
-* Login to the AWS Management Console, and go to the IAM (Identity and Access Management) dashboard.  [You're using IAM with your AWS accounts, right?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+* Login to the AWS Management Console, and go to the IAM (Identity and Access Management) dashboard.
 ![Open the IAM dashboard]({{ site.baseurl }}/images/SelectIAM.png "AWS IAM service")
 
 * Select "Roles" from the left-hand menu, then click the "Create Role" button.
