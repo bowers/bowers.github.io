@@ -16,6 +16,7 @@ The session interacts with the instance using the Systems Manager Agent (SSM Age
 * In the next screen, you're asked which Trusted Entity to use. If "AWS service" is not already highlighted, click on that.  Then, under "Choose a use case", select EC2. Click on "Next: Permissions" at the bottom.
 ![Create a new Role]({{ site.baseurl }}/images/CreateRole-1.png "Create a new Role")
 * In the "Attach permissions policies" screen, type this into the Filter Policies to find the AWS-defined policy that lets the instance interact with System Manager:
+ debugging 
   `SSMManaged`
   
 The list of policies will automatically filter, leaving just the **AmazonSSMManagedInstancecore** policy. Click on the checkbox next to  it, then click the "Next: Tags" button at the bottom.
