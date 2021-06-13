@@ -1,22 +1,25 @@
 ---
 layout: post
-title: Shell into an AWS Instance using System Manager
+title: Shell into an AWS EC2 Instance in a Browser by using System Manager
 ---
-This post describes how to shell into an Ubuntu instance on AWS EC2 using System Manager.
+This post describes how to create a shell session into an Ubuntu instance on EC2 using AWS System Manager. No SSH client needed.
 
-You can use System Manager on AWS to shell into an instance via a browser, and without having to use the command line at all, and without having to open port 22 to anyone.
-All you need is an instance with the Systems Manager Agent (SSM Agent) installed on the instance, and one Policy (AmazonSSMManagedInstanceCore) applied to the instance.
-Since Ubuntu images on AWS EC2 include the Systems Manager agent, it's just a matter of a couple of clicks, and you can shell without using ssh!
+You can use AWS System Manager to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you can configure and use these sessions using only a browser. You also don't need to open port 22 on the instance!
+
+The session is created through the Systems Manager Agent (SSM Agent) installed on the instance, plus applying one Policy (AmazonSSMManagedInstanceCore) either at launch time or later to the instance.  Ubuntu AMIs EC2 already include the SSM Agent, so it's extremely easy.
 
 ## Create an IAM Role with SSM permissions##
 * Login to the AWS Management Console. 
 * Go to IAM.  [You're using IAM, right?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+![Open the IAM dashboard]({{ site.baseurl }}/images/SelectIAM.png "AWS IAM service")
 * Select "Roles", either from the left-hand menu, or from the "IAM Resources" near the top of the center of the screen.
 * Click on the "Create role" button.
-* In the next screen, you're asked which trusted entity. If "AWS service" is not already highlighted, click on that.  Then, below under "Choose a use case", select EC2. Then click on "Next: Permissions" at the bottom.  [Picture: CreateRole1]
+* In the next screen, you're asked which trusted entity. If "AWS service" is not already highlighted, click on that.  Then, below under "Choose a use case", select EC2. Then click on "Next: Permissions" at the bottom.
+![Create a Role]({{ site.baseurl }}/images/CreateRole-1.png "Create Role")
 * In the "Attach permissions policies" screen, type into the Filter Policies search box:
   `SSMManaged`
-* The window will automatically filter all available policies, leaving the one you want. Click on the checkbox next to "AmazonSSMManagedInstanceCore", then click the "Next: Tags" button at the bottom.
+The window will automatically filter all available policies, leaving the one you want. Click on the checkbox next to "AmazonSSMManagedInstanceCore", then click the "Next: Tags" button at the bottom.
+![Attach Policy to Role]({{ site.baseurl }}/images/CreateRole-2.png "Attach Policy to Role")
 * On the "Add tags (optional)" screen, just click "Next: Review".
 * On the Review screen, for Role Name enter "System-manager-Role".  Then click "Create role". You should then see the message "The role System-manager-Role has been created."
 
