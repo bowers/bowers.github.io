@@ -1,27 +1,26 @@
 ---
 layout: post
-title: Shell into an Ubuntu instance on EC2 from a browser using AWS Systems Manager
+title: Shell into an Ubuntu instance on EC2 from a browser using the Systems Manager Agent
 ---
-This post describes how to create a shell session into an Ubuntu instance on EC2 using AWS Systems Manager. No SSH client needed.
+This post describes how to create a shell session to an Ubuntu instance on EC2 using only the browser, with no SSH client or keys.
 
-You can use [AWS Systems Manager](https://aws.amazon.com/systems-manager/) to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you can configure and use these sessions using only a browser. You also don't need to open port 22 on the instance!
+You can use [AWS Systems Manager](https://aws.amazon.com/systems-manager/) to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you don't have to create SSH keys or set up open networking ports in a Security Group. 
 
-The session interacts with the instance using the Systems Manager Agent (SSM Agent) installed on the instance. Since that agent is pre-installed on Ubuntu AMIs on EC2, all you need to do is apply one IAM Policy (AmazonSSMManagedInstanceCore) to the instance to let you create sessions from the browser.
+The session interacts with the instance using the [Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html). That agent is pre-installed on Ubuntu AMIs on EC2, so all you need to do is apply one IAM Policy (AmazonSSMManagedInstanceCore) to the instance.
 
-## Create an IAM Role with SSM permissions
+## 1. Create an IAM Role with Systems Manager permissions
 * Login to the AWS Management Console, and go to the IAM (Identity and Access Management) dashboard.  [You're using IAM with your AWS accounts, right?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 ![Open the IAM dashboard]({{ site.baseurl }}/images/SelectIAM.png "AWS IAM service")
-* Select "Roles" from the left-hand menu.
-* Click on the "Create role" button.
-* In the next screen, you're asked which Trusted Entity to use. If "AWS service" is not already highlighted, click on that.  Then, under "Choose a use case", select EC2. Click on "Next: Permissions" at the bottom.
+* Select "Roles" from the left-hand menu, then click the "Create Role" button.
+* In the next screen, select the "AWS Service" trusted entity, if it is not already selected. Below "Choose a use case", select EC2, then click on "Next: Permissions".
 ![Create a new Role]({{ site.baseurl }}/images/CreateRole-1.png "Create a new Role")
-* In the "Attach permissions policies" screen, type `SSMManaged` into the Filter Policies to find the policy you need ( **AmazonSSMManagedInstancecore** ) Click on the checkbox next to  it, then click the "Next: Tags" button at the bottom.
+* In the "Attach permissions policies" page, type `SSMManaged` into the Filter Policies to find the specific policy you need (**AmazonSSMManagedInstanceCore**). Click on the checkbox next to  it, then click "Next: Tags".
 ![Attach AmazonSSMManagedInstanceCore Policy to Role]({{ site.baseurl }}/images/CreateRole-2.png "Attach Policy to Role")
 * On the "Add tags (optional)" screen, just click "Next: Review".
-* On the Review screen, type in a Role Name of "System-manager-Role". Then click "Create role". You should then see the message "The role System-manager-Role has been created."
+* On the Review screen, type in a Role Name of "System-manager-Role", then click "Create role". You should see the message "The role System-manager-Role has been created."
 ![Name this new Role System-manager-Role]({{ site.baseurl }}/images/CreateRole-4.png "Name the new Role")
 
-## Create the EC2 instance.
+## 2. Create the EC2 instance with this new Role attached
 * From the left navigation bar, select Services, EC2.
 * Click on the Launch instance button, and select Launch instance. 
 * Select an Ubuntu Server instance. I picked "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type". 
@@ -29,32 +28,29 @@ The session interacts with the instance using the Systems Manager Agent (SSM Age
 ![Choose a t2.micro instance]({{ site.baseurl }}/images/LaunchInstance-2.png "choose t2.micro instance")
 * On the "Step 3: Configure Instance Details" screen, scroll down to the "IAM role" drop-down choice.  It should be "None" by default.  Click on the arrow on the right of the "IAM role" drop-down.  You should see the option "System-manager-Role" listed.  Click on it to select it.  Then, click on "Next: Add Storage".
 ![Apply the System-manager-Role to this instance]({{ site.baseurl }}/images/LaunchInstance-2.png "Apply the System-manager-Role to this instance")
-* You can accept the defaults here, so click on "Next: Add Tags".
-* You can also accept the defaults here, so click on "Next: Configure Security Group".
-* Here, we're going to create a new Security Group with NO rules. (You can configure any rules you wish; this is just to demonstrate that you don't need any ports open on the instance to shell into it.) Click on the "X" on the far right of the default rule (SSH, TCP, port 22) to delete that default rule.  There should be no rules left, and you should see a warning at the bottom that you will not be able to connect to this instance.  (We'll show them!)  Click on "Review and Launch".
+* For Storage, you can accept the defaults. Click "Next: Add Tags".
+* You can also accept the defaults for Tags. click "Next: Configure Security Group".
+* We're going to create a new Security Group with no network ports open at all. (You can configure any rules you want, including allowing connections on the normal SSH port of 22, but it's not required for a Systems Manager-based session.) Click on the "X" on the far right of the default SSH rule. With no rules left,  you will see a warning that you won't be able to connect to this instance.  (We'll show them!)  Click on "Review and Launch".
 ![Create new Security Group with no rules]({{ site.baseurl }}/images/LaunchInstance-2.png "Create Security Group with no rules")
-* Verify that you've picked an Ubuntu AMI, and that the Security Group lists no rules.  Then click on "Launch".
+* Verify that you've picked an Ubuntu AMI, and that the Security Group lists no rules.  Click on "Launch".
 * On the key pair selection pop-up window, choose "Proceed without a key pair", and click the acknowledge checkbox.  Then, click "Launch Instances".
 ![No key pair needed]({{ site.baseurl }}/images/LaunchInstance-NoKey.png "No key pair needed")
 
 ## Wait for instance to launch and initialize
-* Click on "View Instances", and wait a minute or two, clicking the refresh button occasionally, until the Status Check column changes from "Initializing" to "2/2".
-![Wait for instance to initialize]({{ site.baseurl }}/images/InstanceInitializingScreenshot.png "Instance initializing")
+* Click on "View Instances." Wait a minute or two, clicking the refresh button occasionally, until the Status Check column changes from "Initializing" to "2/2".
 ![Instance is now ready]({{ site.baseurl }}/images/InstanceInitialized.png "Instance is now ready")
 
-## Shell into instance with browser using Systems Manager
-* From the Services menu, select "Systems Manager", which is a service listed under the "Management and Governance" list.
-![Go to Systems Manager dashboard]({{ site.baseurl }}/images/SelectSystemsManager.png "Go to Systems Manager dashboard")
-* Choose Fleet Manager from the left navigation bar.
-![Go to Fleet Manager tool]({{ site.baseurl }}/images/FleetManager.png "Go to Fleet Manager tool")
-* You should see a list of instances that are manageable by Systems Manager. Click on the radio button next to your instance.  Then, from the Instance Actions drop-down menu, choose "Start session".
-![Go to Fleet Manager and launch session]({{ site.baseurl }}/images/FleetManager-StartSession.png "Go to Systems Manager dashboard")
+## Connect to the instance using Session Manager
+* Click the checkbox to select your instance, then click the Connect button.
+![Select instance and click connect]({{ site.baseurl }}/images/SelectConnect.png "Select instance and click connect")
+* Choose the Session Manager option in the connection pop-up window, then click Connect.
+![Choose Session Manager connection]({{ site.baseurl }}/images/SessionManagerconnect.png "Choose Session Manager connection")
 * A new browser tab (or window) should open, with shell access to your instance.  
 ![Shell session opens in new browser window]({{ site.baseurl }}/images/ShellAccess.png "Shell session opens in new window")
 
 ## Done!
 You are connected to the instance as user **ssm-user**, and you can use sudo. On my window, the little $ of the command prompt can be hard to see, but it's there.
 
-You can also launch a session directly from the EC2 console without visiting the Systems Manager console, by choosing "Connect to your Instance" and picking the Session Manager option. 
+You can also apply the necessary Role after the instance has launched, so you can use this technique with instances that are already running too.
 
-When you're done playing around, click "Terminate" on the shell window to close the shell session.
+When you're done playing around, click "Terminate" on the session window. This Terminate button just closes the remote session; it does not terminate the instance.
