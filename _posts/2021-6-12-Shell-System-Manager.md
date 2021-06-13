@@ -31,12 +31,12 @@ The session interacts with the instance using the [Systems Manager Agent (SSM Ag
 ![Choose a t2.micro instance]({{ site.baseurl }}/images/LaunchInstance-2.png "choose t2.micro instance")
 
 * On the "Step 3: Configure Instance Details" screen, scroll down to the "IAM role" drop-down choice.  It should be "None" by default.  Click on the arrow on the right of the "IAM role" drop-down.  You should see the option "System-manager-Role" listed.  Click on it to select it.  Then, click on "Next: Add Storage".
-![Apply the System-manager-Role to this instance]({{ site.baseurl }}/images/LaunchInstance-2.png "Apply the System-manager-Role to this instance")
+![Apply the System-manager-Role to this instance]({{ site.baseurl }}/images/LaunchInstance-3.png "Apply the System-manager-Role to this instance")
 
 * For Storage, you can accept the defaults. Click "Next: Add Tags".
 * You can also accept the defaults for Tags. click "Next: Configure Security Group".
 * We're going to create a new Security Group with no network ports open at all. (You can configure any rules you want, including allowing connections on the normal SSH port of 22, but it's not required for a Systems Manager-based session.) Click on the "X" on the far right of the default SSH rule. With no rules left,  you will see a warning that you won't be able to connect to this instance.  (We'll show them!)  Click on "Review and Launch".
-![Create new Security Group with no rules]({{ site.baseurl }}/images/LaunchInstance-2.png "Create Security Group with no rules")
+![Create new Security Group with no rules]({{ site.baseurl }}/images/LaunchInstance-6.png "Create Security Group with no rules")
 
 * Verify that you've picked an Ubuntu AMI, and that the Security Group lists no rules.  Click on "Launch".
 * On the key pair selection pop-up window, choose "Proceed without a key pair", and click the acknowledge checkbox.  Then, click "Launch Instances".
