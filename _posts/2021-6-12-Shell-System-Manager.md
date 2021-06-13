@@ -57,8 +57,8 @@ The session interacts with the instance using the [Systems Manager Agent (SSM Ag
 ![Shell session opens in new browser window]({{ site.baseurl }}/images/ShellAccess.png "Shell session opens in new window")
 
 ## Done!
-You are logged in as the user **ssm-user**. You can use sudo with this account. In my browser window shown above, the initial command prompt $ in the sessoin window was hard to see, so it wasn't obvious the shell was working until I started to type.
+You are logged in as the user **ssm-user**. You can use sudo with this account. In my browser window shown above, the first command prompt $ was hard to see, so it wasn't obvious the shell was working until I started to type.
 
-You can also apply the necessary Role after the instance has launched, so you can use this technique with instances that are already running too.
+You can also create and apply the necessary Role after an instance has launched, so this technique works with alraedy existing instances too.
 
-When you're done playing around, click "Terminate" on the session window. This Terminate button just closes the remote session; it does not terminate the instance.
+When you're done playing around, click "Terminate" on the session window. This Terminate button only closes the shell session, it does not terminate the instance.
