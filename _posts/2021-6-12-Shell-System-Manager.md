@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Shell into an AWS EC2 Instance in a Browser by using System Manager
+title: Shell into an Ubuntu instance on EC2 from a browser using AWS System Manager
 ---
 This post describes how to create a shell session into an Ubuntu instance on EC2 using AWS System Manager. No SSH client needed.
 
-You can use AWS System Manager to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you can configure and use these sessions using only a browser. You also don't need to open port 22 on the instance!
+You can use [AWS System Manager](https://aws.amazon.com/systems-manager/) to create an ssh-like shell session to an instance using only a browser. No local SSH client is needed, and you can configure and use these sessions using only a browser. You also don't need to open port 22 on the instance!
 
-The session is created through the Systems Manager Agent (SSM Agent) installed on the instance, plus applying one Policy (AmazonSSMManagedInstanceCore) either at launch time or later to the instance.  Ubuntu AMIs EC2 already include the SSM Agent, so it's extremely easy.
+The session interacts with the instance using the Systems Manager Agent (SSM Agent) installed on the instance. Since that agent is pre-installed on Ubuntu AMIs on EC2, all you need to do is apply one IAM Policy (AmazonSSMManagedInstanceCore) to the instance to let you create sessions from the browser.
 
 ## Create an IAM Role with SSM permissions
 * Login to the AWS Management Console. 
