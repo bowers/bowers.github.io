@@ -29,7 +29,6 @@ If you change the Resource Group name, remember the name, you'll need it later. 
 
 ## 3. Configure Data Collection Rules
 * Go to the Monitor dashboard, and scroll down on the left navigation bar to select "Data Collection Rules".
-* 
 ![Go to Data Collection Rules]({{ site.baseurl }}/images/02-DataCollectionRules.png "Data Collection Rules")
 
 * Click Create to make a new DCR.  Enter a rule name (I picked 'SendPerformanceData'), select the same resource group of the VM and Log Analytics workspace, and select the "Linux" button for platform type.
@@ -47,11 +46,12 @@ If you change the Resource Group name, remember the name, you'll need it later. 
 The detailed OS metrics are now being colleced by the Azure Monitor Agent on the Ubuntu Pro VM. The data is sent to the Log Workspace, and can be viewed and queried in Azure Monitor Logs. (For me, it takes 5 to 10 minutes before logs start appearing in Monitor, so just wait a bit if my instructions below don't work immediately and you instead get "No data" or "we're getting your data..." messages.)
 
 * Go to the Monitor tool, and select Logs.
+
 ![Go to Monitor, then Logs]({{ site.baseurl }}/images/02-MonitorLogs.png "Azure Monitor Logs")
 
 * If the Queries window doesn't open, click on the Queries link on the top right to open it.
 * In the Queries window, scroll down on the left and select Virtual Machines.  Then in the center window, click on the "What Data is being collected?" query.  
-![Log Query Window]({{ site.baseurl }}/images/02-LogQueryWindow.png "Log Queries window")
+![Log Query Window]({{ site.baseurl }}/images/02-LogsQueryWindow.png "Log Queries window")
 
 This shows you the list of metrics that are now being read from inside your Linux VM by the agent, and reported to Monitor. 
 
