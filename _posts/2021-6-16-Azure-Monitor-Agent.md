@@ -29,7 +29,6 @@ If you change the Resource Group name, remember the name, you'll need it later. 
 
 ## 3. Configure Data Collection Rules
 * Go to the Monitor dashboard, and scroll down on the left navigation bar to select "Data Collection Rules".
-![Go to Data Collection Rules]({{ site.baseurl }}/images/02-DataCollectionRules.png "Data Collection Rules")
 
 * Click Create to make a new DCR.  Enter a rule name (I picked 'SendPerformanceData'), select the same resource group of the VM and Log Analytics workspace, and select the "Linux" button for platform type.
 ![Basic DCR]({{ site.baseurl }}/images/02-DCR-Basics.png "Data Collection Rules - Basics")
