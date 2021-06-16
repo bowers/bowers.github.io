@@ -29,6 +29,7 @@ If you change the Resource Group name, remember the name, you'll need it later. 
 
 ## 3. Configure Data Collection Rules
 * Go to the Monitor dashboard, and scroll down on the left navigation bar to select "Data Collection Rules".
+* 
 ![Go to Data Collection Rules]({{ site.baseurl }}/images/02-DataCollectionRules.png "Data Collection Rules")
 
 * Click Create to make a new DCR.  Enter a rule name (I picked 'SendPerformanceData'), select the same resource group of the VM and Log Analytics workspace, and select the "Linux" button for platform type.
@@ -42,8 +43,8 @@ If you change the Resource Group name, remember the name, you'll need it later. 
 * For Destination, change the destination type to "Azure Monitor Logs".  In the "Account or namespace", choose the namespace you created in Step  above.  Then click "Add data source". Back in the Create Data Collection Rule window, click Review + create, then Create. Wait for the deployment to complete.
 ![DCR Destination]({{ site.baseurl }}/images/02-DCR-Destination.png "Data Collection Rules - Destination")
 
-## 4. Done!  Take a look at the metrics coming from the Azure Monitor Agent.
-The detailed OS metrics are now being colleced by the Azure Monitor Agent, and fed into the Logs.  For me, it takes 5 to 10 minutes before logs start appearing in Monitor, so just wait a bit if my instructions below don't work immediately and you instead get "No data" or "we're getting your data..." messages.
+## 4. Done!
+The detailed OS metrics are now being colleced by the Azure Monitor Agent on the Ubuntu Pro VM. The data is sent to the Log Workspace, and can be viewed and queried in Azure Monitor Logs. (For me, it takes 5 to 10 minutes before logs start appearing in Monitor, so just wait a bit if my instructions below don't work immediately and you instead get "No data" or "we're getting your data..." messages.)
 
 * Go to the Monitor tool, and select Logs.
 ![Go to Monitor, then Logs]({{ site.baseurl }}/images/02-MonitorLogs.png "Azure Monitor Logs")
