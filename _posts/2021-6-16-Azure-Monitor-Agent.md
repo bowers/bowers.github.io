@@ -1,11 +1,10 @@
 ---
 layout: post
-title: Using the New Azure Monitor Agent to Collect OS Metrics from Ubuntu Pro
+title: Using the Azure Monitor Agent to see OS metrics on Ubuntu Pro
 ---
 This post describes how to use the Azure Monitor Agent to collect OS-level metrics from a Linux VM on Azure.
 
-The [Azure Monitor Agent went GA in June of 2021](https://azure.microsoft.com/en-us/updates/azure-monitor-agent-and-data-collection-rules-now-generally-available/), and can be used to collect detailed metrics from inside the OS, like memory utilization.  However, there's a limitation that the agent can't yet send data into Azure Monitor Metrics when using Linux. You can, however, send the data to Azure Monitor Logs, and view or query the metrics there. This blog shows how to configure the Azure Monitor Agent and the Data Collection Rules on a VM using Ubuntu Pro.
-
+The [Azure Monitor Agent went GA in June of 2021](https://azure.microsoft.com/en-us/updates/azure-monitor-agent-and-data-collection-rules-now-generally-available/). This agent can collect detailed metrics from inside the OS, like memory utilization.  Currently there's a limitation that these metrics can't be viewed in Azure Monitor Metrics when using Linux. However, you can view and query the metrics in Azure Monitor Logs today, as described below using Ubuntu Pro.
 
 ## 1. Create an Ubuntu Pro VM with system-managed identity
 * From the Azure Portal home screen, open the "Virtual machines" page, then click Create, and select Virtual Machine.
