@@ -13,20 +13,22 @@ Except for getting a security key in Step 7, and viewing the final results in St
 ## 1. Register some resource providers in your Azure subscription
 Add the necessary Resource providers into an Azure subscription:
 
-`az provider register --namespace 'Microsoft.GuestConfiguration'`
-`az provider register --namespace 'Microsoft.Microsoft.HybridCompute'`
-`az provider register --namespace 'Microsoft.Microsoft.OperationalInsights'`
-
+```
+az provider register --namespace 'Microsoft.GuestConfiguration'
+az provider register --namespace 'Microsoft.Microsoft.HybridCompute'
+az provider register --namespace 'Microsoft.Microsoft.OperationalInsights'
+```
 
 Verify they've been registered:
-az provider list --query "[?namespace=='Microsoft.GuestConfiguration' || namespace=='Microsoft.HybridCompute'].{Provider: namespace, Status:registrationState}" --out table
+`az provider list --query "[?namespace=='Microsoft.GuestConfiguration' || namespace=='Microsoft.HybridCompute'].{Provider: namespace, Status:registrationState}" --out table`
 
 
 ## 2. Install Azure Connected Machine Agent
 Download and run install script, which fetches and installs the Azure Connected Machine Agent (azcmagent)
 
-wget https://aka.ms/azcmagent -O install_connected_machine_agent.sh 
-chmod +x install_connected_machine_agent.sh && ./install_connected_machine_agent.sh
+`wget https://aka.ms/azcmagent -O install_connected_machine_agent.sh`
+
+`chmod +x install_connected_machine_agent.sh && ./install_connected_machine_agent.sh`
 
 If it's successfully installed, the last line will be "Latest version of azcmagent is installed."
 
@@ -39,8 +41,8 @@ For Tenant ID, go to Azure Active Directory service, and copy the Tenant ID from
 For Subscription ID, go to Subscriptions service, and copy the Subscription ID from the screen.
 
 ### 3b. Via CLI
-az account tenant list --query '[].tenantId'
-az account subscription list --query '[].subscriptionId'
+`az account tenant list --query '[].tenantId'`
+`az account subscription list --query '[].subscriptionId'`
 
 If this is the first time you've run az account, you'll get Y/N prompt:
 The command requires the extension account. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n):
