@@ -51,7 +51,7 @@ az account subscription list --query '[].subscriptionId'
 ```
 
 If this is the first time you've run az account, you'll get Y/N prompt:
-The command requires the extension account. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n):
+`The command requires the extension account. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n):`
 
 ## 4. Create Resource Group
 Create a resource group to hold your connected machine(s).
@@ -126,8 +126,7 @@ Edit /etc/rsyslog.d/95-omsagent.conf, and add the content below to this file.
 sudo nano /etc/rsyslog.d/95-omsagent.conf
 ```
 
-add:
-# OMS Syslog collection for workspace a83ef1f4-c430-4fce-925d-e05387c6b193
+add this text into 95-omsagent.conf:
 ```
 kern.warning       @127.0.0.1:25224
 daemon.warning     @127.0.0.1:25224
@@ -158,7 +157,7 @@ Click Run, and browse the logs.
 
 ## 10. Clean up
 
-Delete the Log Analytics Extension from the connected machine:
+If you're just experimenting, then after you're done don't forget to turn off the log ingestion and disconnect the machine from Arc.  These commands will disconnect & delete everything done in steps 1 through 9:
 ```
 az connectedmachine extension delete --machine-name "penguin" --name "OmsAgentForLinux" --resource-group "MyConnectedMachines001"
 ```
