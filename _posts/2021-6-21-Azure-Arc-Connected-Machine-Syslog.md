@@ -10,7 +10,7 @@ Prerequisites: If you don't already have it, [install azure-cli](https://docs.mi
 Except for getting a security key in Step 7, and viewing the final results in Step 9, all of the commands below should be run on the remote machine.
 
 
-## 1. Register some resource providers in your Azure subscription
+## 1. Register the necessary resource providers in your Azure subscription
 Add the necessary Resource providers into an Azure subscription:
 
 ```
