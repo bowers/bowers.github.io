@@ -20,15 +20,17 @@ az provider register --namespace 'Microsoft.Microsoft.OperationalInsights'
 ```
 
 Verify they've been registered:
-`az provider list --query "[?namespace=='Microsoft.GuestConfiguration' || namespace=='Microsoft.HybridCompute'].{Provider: namespace, Status:registrationState}" --out table`
+
+```az provider list --query "[?namespace=='Microsoft.GuestConfiguration' || namespace=='Microsoft.HybridCompute'].{Provider: namespace, Status:registrationState}" --out table```
 
 
 ## 2. Install Azure Connected Machine Agent
 Download and run install script, which fetches and installs the Azure Connected Machine Agent (azcmagent)
 
-`wget https://aka.ms/azcmagent -O install_connected_machine_agent.sh`
-
-`chmod +x install_connected_machine_agent.sh && ./install_connected_machine_agent.sh`
+```
+wget https://aka.ms/azcmagent -O install_connected_machine_agent.sh
+chmod +x install_connected_machine_agent.sh && ./install_connected_machine_agent.sh
+```
 
 If it's successfully installed, the last line will be "Latest version of azcmagent is installed."
 
@@ -41,20 +43,22 @@ For Tenant ID, go to Azure Active Directory service, and copy the Tenant ID from
 For Subscription ID, go to Subscriptions service, and copy the Subscription ID from the screen.
 
 ### 3b. Via CLI
-`az account tenant list --query '[].tenantId'`
-`az account subscription list --query '[].subscriptionId'`
+```
+az account tenant list --query '[].tenantId'
+az account subscription list --query '[].subscriptionId'
+```
 
 If this is the first time you've run az account, you'll get Y/N prompt:
 The command requires the extension account. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n):
 
 ## 4. Create Resource Group
 Create a resource group to hold your connected machine(s).
-az group create -l eastus -n MyConnectedMachines001
+```az group create -l eastus -n MyConnectedMachines001```
 
 ## 5. Onboard the machine to Azure Arc
 You'll need your tenant ID, subscription ID, region, and resource group that you created above for this step.
 
-sudo azcmagent connect --resource-group "MyConnectedMachines001" --tenant-id "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" --location "eastus" --subscription-id "zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz"
+```sudo azcmagent connect --resource-group "MyConnectedMachines001" --tenant-id "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" --location "eastus" --subscription-id "zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz"```
 
 ![Connect Machine to Arc]({{ site.baseurl }}/images/03-ConnectMachineToArc.png "Connect Machine to Arc")
 
@@ -63,7 +67,8 @@ During this onboarding, you'll be given a link and a code to authenticate via a 
 ![Open Link and enter code]({{ site.baseurl }}/images/03-EnterCode.png "Authenticate using browser")
 
 Verify that the machine has been connected to Arc:
-az connectedmachine list
+```az connectedmachine list```
+
 This should produce JSON showing details on the connnected server.  Look for the key/value pair of "status" : "Connected" towards the end of the JSON output.
 
 You can also view the machine details in the Azure Portal now, under Azure Arc. Click on "Servers" under the "Infrastructure" heading.
