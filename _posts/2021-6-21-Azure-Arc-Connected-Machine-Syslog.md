@@ -144,7 +144,8 @@ sudo service rsyslog restart
 
 In the Azure Portal, go to Log Analytics Workspaces.  Click on ConnectedMachineWorkspace001.
 On the left-hand navigation bar, select Logs.
-Close the Queries window ("X" in the upper right corner). 
+Close the Queries window ("X" in the upper right corner).
+
 In the query text box, enter
 
 `Syslog 
