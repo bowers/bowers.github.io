@@ -11,7 +11,7 @@ The cloud IMDS includes information like the instance type, the region housing i
 
 Below are links to each cloud's documents on their IMDS, and one example of using each one.
 
-### [Amazon Web Services IMDS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html)
+### [Amazon Web Services IMDS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html)
 AWS offers 2 versions of the IMDS, the second being more secure. You can force instances at launch to use only the second (IMDSv2).
 
 Example: ```wget http://169.254.169.254/latest/meta-data/instance-id```
