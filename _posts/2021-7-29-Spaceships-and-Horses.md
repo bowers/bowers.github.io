@@ -29,7 +29,7 @@ Spaceships should be visionary, groundbreaking...and extremely rare.  Spaceship
 
 And those legacy systems, the horses?  You know, the stuff that works, that's well understood.  Your organization is filled with institutional knowledge about how to use your legacy systems. Everyone knows what they can do, and they know what they can't. For the most part, they get their job done.  
 
-By the way, labeling your system "legacy" is actually a modern thing to do. The first known use of the word "legacy" as an adjective, as in "legacy system," [was in 1984] (https://www.merriam-webster.com/dictionary/legacy).  .
+By the way, labeling your system "legacy" is actually a modern thing to do. The first known use of the word legacy as an adjective, as in "legacy system," [was in 1984](https://www.merriam-webster.com/dictionary/legacy).
 
 Yes, some horses should be replaced.  Yes, you should take advantage of some new, modern technology.  But here's the kicker: You don't modernize by replacing horses with spaceships.  You modernize by managing the dependencies you have on your legacy systems as you roll out new technology.  Most of your horses should be adequately maintained and appreciated. Modernization is about peaceful coexistence between spaceships and horses, not about ditching all the horses. 
 
