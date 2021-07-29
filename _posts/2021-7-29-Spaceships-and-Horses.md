@@ -11,9 +11,7 @@ The future, [as everyone tells us](https://servicepath.co/2021/04/the-future-of-
 What you've got are horses. Legacy systems. Old. Kludgy. Manual.  Ugly stuff like [40-year-old mainframes running COBOL](https://www.cnbc.com/2020/04/06/new-jersey-seeks-cobol-programmers-to-fix-unemployment-system.html), and [airline check-in systems still running Windows XP](https://japantoday.com/category/tech/skymark-airlines-still-using-windows-xp). [It's an embarrassment!](https://www.linkedin.com/pulse/drill-cobol-really-needs-go-dave-johnston/)
 [Replace everything legacy now!](https://devsquad.com/blog/7-reasons-you-should-replace-that-legacy-software-asap/)
 
-What you need are spaceships.  Modern. New. Agile. Automated.  Ditch the mainframe and go with serverless COBOL.
-Put Kubernetes [in everything](https://gcn.com/articles/2020/01/07/af-kubernetes-f16.aspx).
-Add voice-activated artificial intelligence to [your toilet](https://www.tomsguide.com/us/kohler-numi-alexa-toilet,news-28957.html).
+What you need are spaceships.  Modern. New. Agile. Automated.  Ditch the mainframe and go with [serverless COBOL](https://aws.amazon.com/blogs/opensource/serverless-cobol-rejuvenating-legacy-code-with-open-source-software/). Put Kubernetes [in everything](https://gcn.com/articles/2020/01/07/af-kubernetes-f16.aspx). Add voice-activated artificial intelligence to [your toilet](https://www.tomsguide.com/us/kohler-numi-alexa-toilet,news-28957.html).
 
 You're way behind, because everyone else is already using nothing but spaceships, while you're moseying along with your old horses. 
 
