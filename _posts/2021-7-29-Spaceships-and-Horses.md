@@ -8,7 +8,7 @@ We've got IT modernization all wrong.
 
 The future, [as everyone tells us](https://servicepath.co/2021/04/the-future-of-digital-transformation-accenture-deloitte-and-mckinsey/), is about digital transformation.  The modern way to do things is no-code, serverless, and [cloud-native](https://github.com/cncf/foundation/blob/master/charter.md). Anything not run by DevSecOps on Kubernetes is [technical debt](https://martinfowler.com/bliki/TechnicalDebt.html). Since [every company is now a tech company](https://www.wsj.com/articles/every-company-is-now-a-tech-company-1543901207), you should modernize by migrating from your old, legacy systems into modern platforms architected using cutting-edge technology.
 
-What you've got are horses. Legacy systems. Old. Kludgy. Manual.  Ugly stuff like [40-year-old mainframes running COBOL](https://www.cnbc.com/2020/04/06/new-jersey-seeks-cobol-programmers-to-fix-unemployment-system.html), and [airline check-in systems still running Windows XP][https://japantoday.com/category/tech/skymark-airlines-still-using-windows-xp). [It's an embarrassment!](https://www.linkedin.com/pulse/drill-cobol-really-needs-go-dave-johnston/)
+What you've got are horses. Legacy systems. Old. Kludgy. Manual.  Ugly stuff like [40-year-old mainframes running COBOL](https://www.cnbc.com/2020/04/06/new-jersey-seeks-cobol-programmers-to-fix-unemployment-system.html), and [airline check-in systems still running Windows XP](https://japantoday.com/category/tech/skymark-airlines-still-using-windows-xp). [It's an embarrassment!](https://www.linkedin.com/pulse/drill-cobol-really-needs-go-dave-johnston/)
 [Replace everything legacy now!](https://devsquad.com/blog/7-reasons-you-should-replace-that-legacy-software-asap/)
 
 What you need are spaceships.  Modern. New. Agile. Automated.  Ditch the mainframe and go with serverless COBOL.
@@ -23,7 +23,7 @@ So you feel bad.  And embarrassed.  And alone.
 
 Well, don't.  You've been duped into a false choice between "spaceships" and "horses".
 
-![SpaceX Rocket](https://techcrunch.com/wp-content/uploads/2019/09/SpaceX-Starship-Mk1-17.jpg?w=6000&crop=1)
+![SpaceX Rocket](https://techcrunch.com/wp-content/uploads/2019/09/SpaceX-Starship-Mk1-17.jpg?w=618&crop=1)
 
 Spaceships should be visionary, groundbreaking...and extremely rare.  Spaceships fail a lot, but that's a feature, not a bug:  Building spaceships is about learning, not really about reaching the destination.  Also, the technology and skills for building spaceships is spread very unequally.
 
