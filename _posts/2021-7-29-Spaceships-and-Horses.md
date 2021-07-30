@@ -23,7 +23,7 @@ Well, don't.  You've been duped into a false choice between "spaceships" and "h
 
 ![SpaceX Rocket](https://techcrunch.com/wp-content/uploads/2019/09/SpaceX-Starship-Mk1-17.jpg?w=618&crop=1)
 
-Spaceships should be visionary, groundbreaking...and extremely rare.  Spaceships fail a lot, but that's a feature, not a bug:  Building spaceships is about learning, not really about reaching the destination.  Also, the technology and skills for building spaceships is spread very unequally.
+Spaceships should be visionary, groundbreaking...and extremely rare.  Spaceships fail a lot, but that's a feature, not a bug:  Building spaceships is about learning, not really about reaching the destination.  Also, the technology and skills for building spaceships are spread unequally around the IT industry.
 
 ![Horses](https://nypost.com/wp-content/uploads/sites/2/2019/05/wild-horses.jpg?quality=90&strip=all&w=618&h=410&crop=1)
 
@@ -31,8 +31,9 @@ And those legacy systems, the horses?  You know, the stuff that works, that's w
 
 By the way, labeling your system "legacy" is actually a modern thing to do. The first known use of the word legacy as an adjective, as in "legacy system," [was in 1984](https://www.merriam-webster.com/dictionary/legacy).
 
-Yes, some horses should be replaced.  Yes, you should take advantage of some new, modern technology.  But here's the kicker: You don't modernize by replacing horses with spaceships.  You modernize by managing the dependencies you have on your legacy systems as you roll out new technology.  Most of your horses should be adequately maintained and appreciated. Modernization is about peaceful coexistence between spaceships and horses, not about ditching all the horses. 
+Yes, some horses should be replaced.  Yes, you should take advantage of some new, modern technology.  But modernization should not be defined as the process of replacing your horses with spaceships. Modernization comes from managing dependencies on legacy systems as new technology is rolled out.  And that means most of your horses should be adequately maintained and appreciated, not hidden out of embarassment in a basement closet. 
 
 After all, the country that has the most spaceships today [also has the most horses](https://www.bluemarblecitizen.com/rankings/top-horse-countries). 
 
-So abandon the false choice of "modern" vs. "legacy."  They're not in conflict.  You need both.  Success comes from building the skills to integrate modern and legacy together. 
+So abandon the pretense of conflict between modern and legacy.
+![Why Not Both](https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB19ZLNI.img?h=533&w=400&m=6&q=60&o=f&l=f&x=551&y=402)
