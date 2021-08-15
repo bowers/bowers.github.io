@@ -5,11 +5,9 @@ title: eBPF Hello, World!
 This blog is a short intro to eBPF for people who aren't heavy coders but want to try it out themselves.
 
 # What is eBPF?
-eBPF is like the gene-editing technology CRISPR, but for Linux.
+eBPF is to Linux what CRISPR is to genes. Think of eBPF as an official, relatively safe way to hack the Linux kernel.
  
 eBPF is an interface added into the Linux kernel in 2014 that lets users inject code to observe or modify kernel behavior. The added code can run immediately: you don't need to recompile or restart Linux. You also don't need to share your code with anyone else. 
-
-Think of eBPF as an official, relatively safe way to hack the Linux kernel.
 
 For a hot, emerging technology, eBPF remarkably mature because of who is already using it. Hyperscalers like AWS and Facebook are using it widely across their server fleets to do things like problem detection and live kernel patching. They're probably doing lots of other stuff with eBPF that they haven't talked about.
 
