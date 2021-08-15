@@ -103,13 +103,16 @@ By using the observability tool strace when you launch your program, you can obs
 ```sudo strace -e bpf python3 hello.py```
 
 ## 7. Optional Bonus #2: Hook into a different Linux system call
-The above example hooked into a built-in [tracepoint for a kernel system call](https://community.silabs.com/s/article/linux-kernel-events-tracing?language=en_US) involved in the mkdir command. Look for another tracepoint to tap into: 
+The above example hooked into a built-in [tracepoint for a kernel system call](https://community.silabs.com/s/article/linux-kernel-events-tracing?language=en_US) involved in the mkdir command. Look for another tracepoint to tap into:
+
 ```sudo ls /sys/kernel/debug/tracing/events/syscalls```
 
 For example, the "sys_enter_execve" call occurs whenever a new program is launched:
+
 ```sudo more /sys/kernel/debug/tracing/events/syscalls/sys_enter_execve/format```
  
 Change your eBPF program to attach to the sys_enter_execve tracepoint, and change which parameter to print out:
+
 ```
 TRACEPOINT_PROBE(syscalls, sys_enter_execve) {
    bpf_trace_printk("Hello. Creating new program: %s\n", args->filename);
@@ -118,9 +121,11 @@ TRACEPOINT_PROBE(syscalls, sys_enter_execve) {
 ```
 
 Run your updated listen program:
+
 ```sudo python3 listen.py```
 
 In your second window, run some commands, e.g.
+
 ```
 ls
  whoami
