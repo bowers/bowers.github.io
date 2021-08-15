@@ -24,13 +24,13 @@ For people like me who like to try things for themselves, here is a walk-through
 
 I used Ubuntu 20.04. These instructions should work on both a local computer and on a VM in AWS or Azure. You'll need two shell windows open; one to load your eBPF program into the Linux kernel, and the other to generate events to trigger your program.
 
-## 1. Verify your Linux was created has the required hooks
+## 1. Verify your Linux has the required hooks
 
 ```more /boot/config-$(uname -r) | grep CONFIG_BPF```
 
 If the response includes "CONFIG_BPF=y", you're probably fine.
 
-## 2. Install the BPF Compiler Collection tools (BCC):
+## 2. Install the BPF Compiler Collection tools (BCC)
 [BCC](https://github.com/iovisor/bcc) is a collection of tools to help create and run eBPF programs.
 
 ```
@@ -101,12 +101,12 @@ CTRL-C to exit
 7419   Hello. Creating new directory: frodo
 ```
 
-## 6. Optional Bonus #1: Peek a little under the kernel hood
+## 6. Bonus #1: Peek a little under the kernel hood
 By using the observability tool strace when you launch your program, you can observe things like your eBPF program getting loaded into the kernel:
 
 ```sudo strace -e bpf python3 listen.py```
 
-## 7. Optional Bonus #2: Hook into a different Linux system call
+## 7. Bonus #2: Hook into a different Linux system call
 The above example hooked into a built-in [tracepoint for a kernel system call](https://community.silabs.com/s/article/linux-kernel-events-tracing?language=en_US) involved in the mkdir command. Look for another tracepoint to tap into:
 
 ```sudo ls /sys/kernel/debug/tracing/events/syscalls```
