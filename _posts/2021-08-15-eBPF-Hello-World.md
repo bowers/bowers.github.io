@@ -25,12 +25,14 @@ For people like me who like to try things for themselves, here is a walk-through
 I used Ubuntu 20.04. These instructions should work on both a local computer and on a VM in AWS or Azure. You'll need two shell windows open; one to load your eBPF program into the Linux kernel, and the other to generate events to trigger your program.
 
 ## 1. Verify your Linux was created has the required hooks
+
 ```more /boot/config-$(uname -r) | grep CONFIG_BPF```
 
 If the response includes "CONFIG_BPF=y", you're probably fine.
 
 ## 2. Install the BPF Compiler Collection tools (BCC):
 [BCC](https://github.com/iovisor/bcc) is a collection of tools to help create and run eBPF programs.
+
 ```
 sudo apt-get update
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
@@ -39,6 +41,7 @@ sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
 ## 3. Verify BCC and eBPF are working
 Run one of the tools included with BCC to make sure they're set up and can access eBPF:
 In window 1:
+
 ```sudo /usr/sbin/bashreadline-bpfcc```
 
 In window 2, run commands like ```ls``` and ```whoami```. You should see a date stamp, a process idenifier (PID), and your command appear window 1:  
@@ -55,6 +58,7 @@ In window 1, type CTRL+C to exit.
 
 ## 4. Create and run your own program
 Copy the code below to a new file listen.py or [download it from here](https://raw.githubusercontent.com/bowers/util-disk/main/listen.py).
+
 ```
 from bcc import BPF
 from bcc.utils import printb
@@ -78,14 +82,15 @@ while True:
         break
 ```
 
-Run the program using sudo.  (Loading eBPF programs requires superuser permissions.) 
+Run the program using sudo: 
 ```sudo python3 listen.py```
 
 ## 5. Generate the activity that will trigger your eBPF program
 In window 2, create a directory:
+
 ```mkdir frodo```
 
-Back in windows 1, you should see the process identifier (PID) followed by your "hello" message.
+Back in window 1, you should see the process identifier (PID) followed by your "hello" message.
 If so, you've successfully created and executed an eBPF program!
 
 ```
@@ -98,6 +103,7 @@ CTRL-C to exit
 
 ## 6. Optional Bonus #1: Peek a little under the kernel hood
 By using the observability tool strace when you launch your program, you can observe things like your eBPF program getting loaded into the kernel:
+
 ```sudo strace -e bpf python3 hello.py```
 
 ## 7. Optional Bonus #2: Hook into a different Linux system call
