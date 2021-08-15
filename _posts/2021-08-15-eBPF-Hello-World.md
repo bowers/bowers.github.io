@@ -42,7 +42,8 @@ sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
 Run one of the tools included with BCC to make sure they're set up and can access eBPF:
 In window 1:
 ```sudo /usr/sbin/bashreadline-bpfcc```
-In window 2, run some commands (e.g. ls, date, whoami).  When you run them, you should see the time, process idenifier (PID), and command printed in window 1.  
+
+In window 2, run commands like ```ls``` and ```whoami```. You should see a date stamp, a process idenifier (PID), and your command appear window 1:  
 
 ```
 $ sudo /usr/sbin/bashreadline-bpfcc
@@ -85,6 +86,7 @@ Run the program using sudo.  (Loading eBPF programs requires superuser permissio
 ## 5. Generate the activity that will trigger your eBPF program
 In window 2, create a directory:
 ```mkdir frodo```
+
 Back in windows 1, you should see the process identifier (PID) followed by your "hello" message.
 If so, you've successfully created and executed an eBPF program!
 
@@ -103,6 +105,7 @@ By using the observability tool strace when you launch your program, you can obs
 ## 7. Optional Bonus #2: Hook into a different Linux system call
 The above example hooked into a built-in [tracepoint for a kernel system call](https://community.silabs.com/s/article/linux-kernel-events-tracing?language=en_US) involved in the mkdir command. Look for another tracepoint to tap into: 
 ```sudo ls /sys/kernel/debug/tracing/events/syscalls```
+
 For example, the "sys_enter_execve" call occurs whenever a new program is launched:
 ```sudo more /sys/kernel/debug/tracing/events/syscalls/sys_enter_execve/format```
  
@@ -116,6 +119,7 @@ TRACEPOINT_PROBE(syscalls, sys_enter_execve) {
 
 Run your updated listen program:
 ```sudo python3 listen.py```
+
 In your second window, run some commands, e.g.
 ```
 ls
