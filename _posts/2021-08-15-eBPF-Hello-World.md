@@ -18,9 +18,9 @@ To go deep into the how's and why's of eBPF, two people you should follow are
 
 For people like me who like to try things for themselves, here is a walk-through for a simple "Hello World" eBPF program. However, as [Dan Wendlandt](https://twitter.com/danwendlandt) of [Isovalent](https://isovalent.com/) told me, programming in eBPF probably won't become a widespread skill. Instead, eBPF programming will be concentrated on the same specialists who do Linux kernel development or create system monitoring tools.
 
-![Hook an eBPF program into the mkdir system call]({{ site.baseurl }}/images/ebpf-mkdir-tracepoint.png)
-
 # eBPF Hello, World!
+
+![Hook an eBPF program into the mkdir system call]({{ site.baseurl }}/images/ebpf-mkdir-tracepoint.png)
 
 I used Ubuntu 20.04. These instructions should work on both a local computer and on a VM in AWS or Azure. You'll need two shell windows open; one to load your eBPF program into the Linux kernel, and the other to generate events to trigger your program.
 
