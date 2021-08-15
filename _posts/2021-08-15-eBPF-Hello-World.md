@@ -124,10 +124,4 @@ Run your updated listen program:
 
 ```sudo python3 listen.py```
 
-In your second window, run some commands, e.g.
-
-```
-ls
- whoami
-```
-...and you should see those commands listed in window 1.
+In your second window, run some commands like ```ls``` and you should see those commands listed in window 1, similar to what happened with the built-in tool from BCC in step 3 above.
