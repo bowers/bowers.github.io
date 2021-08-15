@@ -54,7 +54,7 @@ TIME      PID    COMMAND
 In window 1, type CTRL+C to exit.
 
 ## 4. Create and run your own program
-Copy the code below to a new file listen.py or (download it from here)[https://raw.githubusercontent.com/bowers/util-disk/main/listen.py].
+Copy the code below to a new file listen.py or [download it from here](https://raw.githubusercontent.com/bowers/util-disk/main/listen.py).
 ```
 from bcc import BPF
 from bcc.utils import printb
