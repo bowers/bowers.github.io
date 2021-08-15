@@ -7,18 +7,20 @@ This blog is a short intro to eBPF for people who aren't heavy coders but want t
 # What is eBPF?
 eBPF is like the gene-editing technology CRISPR, but for Linux.
  
-eBPF is an interface added into Linux a few years ago that lets users inject code into the Linux kernel in order to observe or modify the kernel's behavior. Your new code starts running immediately: you don't need to recompile or restart Linux. You also don't need to share your code with anyone else.  Think of eBPF as an official, relatively safe way to hack the Linux kernel.
+eBPF is an interface added into the Linux kernel in 2014 that lets users inject code to observe or modify kernel behavior. The added code can run immediately: you don't need to recompile or restart Linux. You also don't need to share your code with anyone else. 
 
-For a hot, emerging technology, eBPF remarkably mature because of who is already using it. Hyperscalers like AWS and Facebook are using it widely across their server fleets to do things like problem detection and live kernel patching. And since you don't have to share your eBPF code with anyone else or wait for upstream Linux to adopt your code, cloud companies are probably doing lots of other stuff with eBPF that they haven't talked about.
+Think of eBPF as an official, relatively safe way to hack the Linux kernel.
 
-I haven't yet said what the acronym eBPF stands for. The full name is a historical oddity that does a poor job describing the technology. So most people call it "eBPF," or more commonly just "BPF".
+For a hot, emerging technology, eBPF remarkably mature because of who is already using it. Hyperscalers like AWS and Facebook are using it widely across their server fleets to do things like problem detection and live kernel patching. They're probably doing lots of other stuff with eBPF that they haven't talked about.
 
-If you want to get in-depth on the how's and why's of eBPF, two people you should follow are
+eBPF is an acronym, but [the full name](https://en.wikipedia.org/wiki/Berkeley_Packet_Filter) does a poor job describing the current technology, so most people call it "eBPF", or even just "BPF".
+
+To go deep into the how's and why's of eBPF, two people you should follow are
 [Brendan Gregg](https://www.brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html) and [Liz Rice](https://thenewstack.io/liz-rice-following-the-superpower-promise-of-ebpf/).
 
-For people like me who like to try things for themselves, below are instructions for creating and running a very simple, "Hello World"-class eBPF program on Ubuntu Linux. But as [Dan Wendlandt](https://twitter.com/danwendlandt) of [Isovalent](https://isovalent.com/) told me, programming in eBPF probably won't become a widespread skill, despite the exploding popularity of the technology. Instead, eBPF programming will be concentrated on the same specialists who do Linux kernel development or create system monitoring tools.
+For people like me who like to try things for themselves, here is a walk-through for a simple "Hello World" eBPF program. However, as [Dan Wendlandt](https://twitter.com/danwendlandt) of [Isovalent](https://isovalent.com/) told me, programming in eBPF probably won't become a widespread skill. Instead, eBPF programming will be concentrated on the same specialists who do Linux kernel development or create system monitoring tools.
 
-![Hook an eBPF program into the mkdir system call]({{ site.baseurl }}/images/ebpf-mkdir-tracepoint.png")
+![Hook an eBPF program into the mkdir system call]({{ site.baseurl }}/images/ebpf-mkdir-tracepoint.png)
 
 # eBPF Hello, World!
 
@@ -26,6 +28,7 @@ I used Ubuntu 20.04. These instructions should work on both a local computer and
 
 ## 1. Verify your Linux was created has the required hooks
 ```more /boot/config-$(uname -r) | grep CONFIG_BPF```
+
 If the response includes "CONFIG_BPF=y", you're probably fine.
 
 ## 2. Install the BPF Compiler Collection tools (BCC):
