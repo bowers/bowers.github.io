@@ -104,7 +104,7 @@ CTRL-C to exit
 ## 6. Optional Bonus #1: Peek a little under the kernel hood
 By using the observability tool strace when you launch your program, you can observe things like your eBPF program getting loaded into the kernel:
 
-```sudo strace -e bpf python3 hello.py```
+```sudo strace -e bpf python3 listen.py```
 
 ## 7. Optional Bonus #2: Hook into a different Linux system call
 The above example hooked into a built-in [tracepoint for a kernel system call](https://community.silabs.com/s/article/linux-kernel-events-tracing?language=en_US) involved in the mkdir command. Look for another tracepoint to tap into:
