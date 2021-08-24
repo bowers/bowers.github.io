@@ -4,7 +4,7 @@ title: Find the Date that a Package in the Ubuntu Repository was Created
 ---
 This blog shows how to use the API on Ubuntu's "Launchpad" package creation system to retrieve metadata, like the date a patch was created
 
-# Official Ubuntu Repositories
+### Fetching Metadata from Launchpad
 Ubuntu has [four main, official repositories](https://help.ubuntu.com/community/Repositories/Ubuntu) where packages are stored. You typically run [apt](http://manpages.ubuntu.com/manpages/bionic/man8/apt.8.html) or [apt-get](http://manpages.ubuntu.com/manpages/cosmic/man8/apt-get.8.html) to find and download the latest packages.  You can look through these repositories and search for packages though a web browser at [https://packages.ubuntu.com/](https://packages.ubuntu.com/).
 
 [Canonical](https://canonical.com/), the makers of Ubuntu, use a system called [Launchpad](https://launchpad.net/) to create the packages and store them in the repositories. You can search through Launchpad with a browser and find information like a package's detailed history.  Launchpad also has a [poorly documented API](https://help.launchpad.net/API) that lets you retrieve this same information.
