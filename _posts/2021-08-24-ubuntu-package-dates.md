@@ -9,7 +9,7 @@ Ubuntu has [four main, official repositories](https://help.ubuntu.com/community/
 
 [Canonical](https://canonical.com/), the makers of Ubuntu, use a system called [Launchpad](https://launchpad.net/) to create the packages and store them in the repositories. You can search through Launchpad with a browser and find information like a package's detailed history.  Launchpad also has a [poorly documented API](https://help.launchpad.net/API) that lets you retrieve this same information.
 
-This [example shell program](https://raw.githubusercontent.com/bowers/util-disk/main/package-date-launchpad)example shell program uses HTTP requests to the API to retrieve package creation dates.  This specific script reports dates for packages in the [updates or security pockets](https://docs.ubuntu.com/landscape/en/repositories) of Ubuntu 20.04 ("Focal") that the apt utility says have available updates.
+This [example shell program](https://raw.githubusercontent.com/bowers/util-disk/main/package-date-launchpad) uses HTTP requests to the API to retrieve package creation dates.  This specific script reports dates for packages in the [updates or security pockets](https://docs.ubuntu.com/landscape/en/repositories) of Ubuntu 20.04 ("Focal") that the apt utility says have available updates.
 
 The key line showing this fetch from the API is:
 ```
