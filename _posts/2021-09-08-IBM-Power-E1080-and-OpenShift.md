@@ -1,4 +1,4 @@
---
+---
 layout: post
 title: IBM announces a Power E1080 beast, but OpenShift may steal the spotlight
 ---
