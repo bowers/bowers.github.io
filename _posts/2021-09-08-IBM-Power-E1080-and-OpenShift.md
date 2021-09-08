@@ -17,7 +17,7 @@ IBM refreshes its Power processor every 3 to 4 years, so this announcement wasn'
 
 ![IBM Power E1080](https://mma.prnewswire.com/media/1608358/IBM_Power_E1080_Top_Down.jpg "E1080 Top Down View")
 
-IBM typically has a family of servers, from small to large, with each processor generation, so expect IBM to follow up over the next year with 1-, 2-, and 4-socket server announcements
+IBM typically has a family of servers, from small to large, with each processor generation, so expect IBM to follow up over the next year with 1-, 2-, and 4-socket server announcements.
 
 This new E1080 server is big iron, ideal for the massive performance, memory, and throughput of big databases.  It's almost ideal for SAP HANA, but it will also replace older hardware being used for high transaction rate databases in the financial and healthcare markets.
 
