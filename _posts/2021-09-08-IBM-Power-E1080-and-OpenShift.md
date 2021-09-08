@@ -5,7 +5,7 @@ title: IBM announces a Power E1080 beast, but OpenShift may steal the spotlight
 
 On schedule, IBM launched its next-gen big-iron Power E1080 server ideal for huge databases. Included in the announcement is a peek at the future of Red Hat integration: a unique-to-IBM licensing option for OpenShift.
 
-Today, September 8, IBM [announced](IBM Announcement https://newsroom.ibm.com/2021-09-08-IBM-unveils-new-generation-of-IBM-Power-servers-for-frictionless,-scalable-hybrid-cloud) the Power E1080 server, an up-to-16 socket system that's the first to use its POWER10 processor. 
+Today, September 8, IBM [announced](https://newsroom.ibm.com/2021-09-08-IBM-unveils-new-generation-of-IBM-Power-servers-for-frictionless,-scalable-hybrid-cloud) the Power E1080 server, an up-to-16 socket system that's the first to use its POWER10 processor. 
 
 IBM refreshes its Power processor every 3 to 4 years, so this announcement wasn't unexpected. IBM also talked about its POWER10 processor a lot [last year](https://www.hc32.hotchips.org/assets/program/conference/day1/HotChips2020_Server_Processors_IBM_Starke_POWER10_v33.pdf), so even though the technical specs are impresive, they're not a surprise:
 
