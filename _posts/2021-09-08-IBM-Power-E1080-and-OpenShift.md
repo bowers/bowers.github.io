@@ -15,13 +15,16 @@ IBM refreshes its Power processor every 3 to 4 years, so this announcement wasn'
 * A new memory interface, new AI-enabling math accelerators, and a new built-in memory encryption feature
 * Support for IBM's AIX and i operating systems, as well as Linux
 
-![IBM Power E1080](https://mma.prnewswire.com/media/1608358/IBM_Power_E1080_Top_Down.jpg "E1080 Top Down View")
+![POWER Processor performance over time]({{ site.baseurl }}/images/Power-Performance-Over-Time.png "POWER Processor performance over time")
 
 IBM typically has a family of servers, from small to large, with each processor generation, so expect IBM to follow up over the next year with 1-, 2-, and 4-socket server announcements.
 
 This new E1080 server is big iron, ideal for the massive performance, memory, and throughput of big databases.  It's almost ideal for SAP HANA, but it will also replace older hardware being used for high transaction rate databases in the financial and healthcare markets.
 
 IBM included two benchmark results as part of the announcement to prove the E1080's horsepower bona fides. One was a [CPU-oriented SPEC CPU2017 benchmark](http://spec.org/cpu2017/results/res2021q3/cpu2017-20210814-28679.html), the other an [SAP application benchmark](https://www.sap.com/dmc/benchmark/2021/Cert21059.pdf).  Both are widely-used industry-standard benchmarks, which gives lots of credences to IBM's best-in-class performance claims.
+
+IBM Power E1080 Server
+![IBM Power E1080](https://mma.prnewswire.com/media/1608358/IBM_Power_E1080_Top_Down.jpg "E1080 Top Down View")
 
 IBM also touted the system's security and hybrid cloud benefits.  The transparent memory encryption feature shows IBM's mettle when it comes to hardware-based security.  The hybrid-cloud benefit claim might not mean what people think, though, because Power10-based systems aren't available in any public clouds.  (The press release is ambiguous about whether IBM Power Virtual Server will eventually be based on Power10 systems.)
 
