@@ -12,7 +12,7 @@ IBM refreshes its Power processor every 3 to 4 years, so this announcement wasn'
 * 18 billion transistors using 7nm technology
 * up to 15 cores per chip, with up to 16 chips per server
 * Up to 8 threads per core ("SMT8"; similar to hyperthreading but with 8 instead of 2 threads per core)
-* A [new memory interface](https://www.nextplatform.com/2020/09/03/the-memory-area-network-at-the-heart-of-ibms-power10/), new (AI-enabling math accelerators)[https://arxiv.org/pdf/2104.03142.pdf], and a new built-in memory encryption feature
+* A [new memory interface](https://www.nextplatform.com/2020/09/03/the-memory-area-network-at-the-heart-of-ibms-power10/), new [AI-enabling math accelerators](https://arxiv.org/pdf/2104.03142.pdf), and a new built-in memory encryption feature
 * Support for IBM's AIX and i operating systems, as well as Linux
 
 ![POWER Processor performance over time]({{ site.baseurl }}/images/Power-Performance-Over-Time2.png "POWER Processor performance over time")
